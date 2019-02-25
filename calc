@@ -1,0 +1,15 @@
+start_inquiry = input("What can I help you with today? For summer tuition information, type 1. For transfer eligibility, type 2. If you want to exit, type 0 ")
+if start_inquiry == '1':
+    psu_summer_tuition = input("How many credits are you going to be taking? ")
+    cost_per_credit = 557
+    if int(psu_summer_tuition) <= 4:
+        tech_fee = 63
+    elif 5 <= int(psu_summer_tuition) <= 8:
+        tech_fee = 126
+    elif int(psu_summer_tuition) >= 9:
+        tech_fee = 189
+    print("Your tuition for summer semester is", int(psu_summer_tuition)*int(cost_per_credit)+int(tech_fee), "dollars!")
+elif start_inquiry == "2":
+    gpa_elig = input("What is your current GPA? ")
+    gpa_req = 2.0
+    print("You are eligible for transfer!") if float(gpa_elig) >= float(gpa_req) else print("You are NOT eligible for transfer!")
