@@ -1,0 +1,169 @@
+CREATE TABLE Shopper (ID NUMBER(5), 
+                      FirstName VARCHAR2(50), 
+                      MiddleName VARCHAR2(50), 
+                      LastName VARCHAR2(50), 
+                      Phone VARCHAR2(50), 
+                      Email VARCHAR2(50), 
+                      Address1 VARCHAR2(50), 
+                      Address2 VARCHAR2(50), 
+                      City VARCHAR2(50), 
+                      State VARCHAR2(2), 
+                      ZIP NUMBER(5));
+INSERT INTO Shopper(ID,
+                    FirstName, 
+                    MiddleName, 
+                    LastName, 
+                    Phone, 
+                    Email, 
+                    Address1, 
+                    Address2,
+                    City,
+                    State,
+                    ZIP) 
+                    VALUES ('12345',
+                    'John',
+                    'David',
+                    'Smith',
+                    '215-867-5308',
+                    'jdsmith@psu.edu',
+                    '1313 Mockingbird Lane',
+                    'Apt 5a',
+                    'Yonkers',
+                    'NY',
+                    '10470');
+INSERT INTO Shopper(ID,
+                    FirstName, 
+                    MiddleName, 
+                    LastName, 
+                    Phone, 
+                    Email, 
+                    Address1, 
+                    Address2,
+                    City,
+                    State,
+                    ZIP) 
+                        VALUES ('12346',
+                                'Jane',
+                                '',
+                                'Doe',
+                                '267-710-8952',
+                                'jdoe@psu.edu',
+                                '1248 Ocean Ave',
+                                '',
+                                'Brooklyn',
+                                'NY',
+                                '11230');
+
+CREATE TABLE OrderName (ID NUMBER(5), 
+                        ShopperID NUMBER(5));
+INSERT INTO OrderName (ID, 
+                       ShopperID)
+                   VALUES ('11111', 
+                           '12345');
+INSERT INTO OrderName (ID, 
+                       ShopperID)
+                   VALUES ('11112', 
+                           '12346');
+
+CREATE TABLE OrderLine (OrderID NUMBER(5), 
+                      ProductID NUMBER(4), 
+                      Price NUMBER(9,2));
+INSERT INTO OrderLine(OrderID,
+                      ProductID, 
+                      Price) 
+                        VALUES ('11111',
+                                '1234',
+                                '8.99');
+INSERT INTO OrderLine(OrderID,
+                      ProductID, 
+                      Price) 
+                        VALUES ('11111',
+                                '1235',
+                                '25.18');
+INSERT INTO OrderLine(OrderID,
+                      ProductID, 
+                      Price) 
+                        VALUES ('11112',
+                                '1237',
+                                '21.98');
+INSERT INTO OrderLine(OrderID,
+                      ProductID, 
+                      Price) 
+                        VALUES ('11112',
+                                '1239',
+                                '32.97');
+
+CREATE TABLE Product (ID NUMBER(4), 
+                      Name VARCHAR2(50), 
+                      ManufacturerID NUMBER(3), 
+                      Price NUMBER(9,2));
+INSERT INTO Product(ID,
+                    Name, 
+                    ManufacturerID, 
+                    Price) 
+                        VALUES ('1234',
+                                'Chess',
+                                '456',
+                                '9.99');
+INSERT INTO Product(ID,
+                    Name, 
+                    ManufacturerID, 
+                    Price) 
+                        VALUES ('1235',
+                                'Sorry',
+                                '457',
+                                '13.99');
+INSERT INTO Product(ID,
+                    Name, 
+                    ManufacturerID, 
+                    Price) 
+                        VALUES ('1236',
+                                'Connect Four',
+                                '456',
+                                '11.99');
+INSERT INTO Product(ID,
+                    Name, 
+                    ManufacturerID, 
+                    Price) 
+                        VALUES ('1237',
+                                'Life',
+                                '458',
+                                '10.99');
+INSERT INTO Product(ID,
+                    Name, 
+                    ManufacturerID, 
+                    Price) 
+                        VALUES ('1238',
+                                'Trouble',
+                                '457',
+                                '10.99');
+INSERT INTO Product(ID,
+                    Name, 
+                    ManufacturerID, 
+                    Price) 
+                        VALUES ('1239',
+                                'Checkers',
+                                '456',
+                                '10.99');
+
+CREATE TABLE Manufacturer (ID NUMBER(3), 
+                      ManufacturerName VARCHAR2(50), 
+                      ManufacturerState VARCHAR2(2));
+INSERT INTO Manufacturer(ID,
+                        ManufacturerName, 
+                        ManufacturerState) 
+                        VALUES ('456',
+                                'Milton Bradley',
+                                'CA');
+INSERT INTO Manufacturer(ID,
+                        ManufacturerName, 
+                        ManufacturerState) 
+                        VALUES ('457',
+                                'Hasbro',
+                                'NY');
+INSERT INTO Manufacturer(ID,
+                        ManufacturerName, 
+                        ManufacturerState) 
+                        VALUES ('458',
+                                'Mattel',
+                                'TX');
