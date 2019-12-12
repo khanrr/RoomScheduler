@@ -26,38 +26,31 @@ public class Faculty
     private static PreparedStatement getFacultyList;
     private static ResultSet resultSet;
     
-    public static void addFaculty(String name)
-    {
+    public static void addFaculty(String name){
         connection = DBConnection.getConnection();
-        try
-        {
+        try{
             addFaculty = connection.prepareStatement("insert into faculty (name) values (?)");
             addFaculty.setString(1, name);
             addFaculty.executeUpdate();
         }
-        catch(SQLException sqlException)
-        {
+        catch(SQLException sqlException){
             sqlException.printStackTrace();
         }
         
     }
     
-    public static ArrayList<String> getFacultyList()
-    {
+    public static ArrayList<String> getFacultyList(){
         connection = DBConnection.getConnection();
         ArrayList<String> faculty = new ArrayList<String>();
-        try
-        {
+        try{
             getFacultyList = connection.prepareStatement("select name from faculty order by name");
             resultSet = getFacultyList.executeQuery();
             
-            while(resultSet.next())
-            {
+            while(resultSet.next()){
                 faculty.add(resultSet.getString(1));
             }
         }
-        catch(SQLException sqlException)
-        {
+        catch(SQLException sqlException){
             sqlException.printStackTrace();
         }
         return faculty;
