@@ -17,8 +17,7 @@ public class Dates {
     private static PreparedStatement getDateList;
     private static ResultSet resultSet;
     
-    public static ArrayList<String> getDateList()
-    {
+    public static ArrayList<String> getDateList(){
         connection = DBConnection.getConnection();
         ArrayList<String> dates = new ArrayList<String>();
         try
@@ -36,6 +35,9 @@ public class Dates {
             sqlException.printStackTrace();
         }
         return dates;
+        
+    }
+    public static void addDate(){
         
     }
 }
