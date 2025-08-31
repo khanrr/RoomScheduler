@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run RoomScheduler with Derby Driver",
+			"type": "shell",
+			"command": "java -cp \"lib\\derbyclient.jar;bin\" roomscheduler.RoomScheduler",
+			"group": "build"
+		},
+		{
+			"label": "Run RoomScheduler with Derby Driver (PowerShell Fix)",
+			"type": "shell",
+			"command": "java -cp \"lib\\derbyclient.jar;bin\" roomscheduler.RoomScheduler",
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
