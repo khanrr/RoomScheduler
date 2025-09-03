@@ -10,7 +10,6 @@ import java.util.Calendar;
 public class WaitlistQueries {
     private static Connection connection;
     private static PreparedStatement addWaitlist;
-    private static ResultSet resultSetWaitlist;
     private static PreparedStatement getWaitlist;
     private static ResultSet resultSet;
     

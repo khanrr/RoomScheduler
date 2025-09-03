@@ -9,7 +9,6 @@ import java.util.Calendar;
 
 public class ReservationQueries {
     private static Connection connection;
-    private static ArrayList<String> reservations = new ArrayList<String>();
     private static PreparedStatement addReservation;
     private static PreparedStatement getRoomListByDate;
     private static PreparedStatement getReservationListByDate;

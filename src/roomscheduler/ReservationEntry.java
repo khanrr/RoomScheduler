@@ -23,7 +23,6 @@ public class ReservationEntry {
                 if(getDates.contains(date) && getDates.contains(seats)){
                 //send to WaitlistEntry
                 }
-                int room = 201;
             }
             else if(seats > 20 && seats <= 40){
                 ArrayList<Object> getDates = (ArrayList<Object>) connection.prepareStatement("select date from reservations");
@@ -31,14 +30,12 @@ public class ReservationEntry {
                 if(getDates.contains(date) && getSeats.contains(seats)){
                     
                 }
-                int room = 102;
             }
             else{
                 ArrayList<String> getDates = (ArrayList<String>) connection.prepareStatement("select date, seats from reservations");
                 if(getDates.contains(date) && getDates.contains(seats)){
                     
-                }
-                int room = 101;                
+                }                
             }
             reservations = (ArrayList<String>) connection.prepareStatement("insert into reservations (faculty,room,date,seats,timestamp) values ('"+faculty+"', room, '"+date+"', '"+seats+"', current_timestamp)");
             addReservation.executeUpdate();
